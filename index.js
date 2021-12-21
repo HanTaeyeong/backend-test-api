@@ -3,10 +3,12 @@ const express = require('express')
 fs = require('fs');
 
 const app = express()
-const port = 8080;
+const port = 80;
 
 app.get('/', (req, res) => {
-    fs.writeFile('./logs/logFile '+(new Date().toString())+".txt", 'Some other lyric', 'ascii', ()=>{});      
+    console.log("got request!");
+    fs.writeFile('./logs/logFile '+(new Date().toISOString())+".txt", 'Some other lyric', 'ascii', ()=>{});      
+
 })
 
 app.listen(port, () => {
